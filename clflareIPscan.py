@@ -63,7 +63,7 @@ def scanner(host):
 	sock=socket.socket()
 	sock.settimeout(2)
 	try:
-		sock.connect((str(host),80))
+		sock.connect((str(host),443))
 		payload='GET / HTTP/1.1\r\nHost: {}\r\n\r\n'.format(host)
 		sock.send(payload.encode())
 		response=sock.recv(1024).decode('utf-8','ignore')
@@ -98,7 +98,7 @@ def payloadsnd(ip):
 	config = configparser.ConfigParser()
 	config.read_file(open('configfile.ini'))
 	domain = config['websocket']['custom_domain']
-	port =443
+	port =80
 	sc=socket.socket()
 	sc.connect((str(ip),port))
 	payload=f'GET / HTTP/1.0[crlf]Host: {domain}[crlf][crlf]'
