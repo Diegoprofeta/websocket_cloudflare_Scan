@@ -98,7 +98,7 @@ def payloadsnd(ip):
 	config = configparser.ConfigParser()
 	config.read_file(open('configfile.ini'))
 	domain = config['websocket']['custom_domain']
-	port =80
+	port =443
 	sc=socket.socket()
 	sc.connect((str(ip),port))
 	payload=f'GET / HTTP/1.0[crlf]Host: {domain}[crlf][crlf]'
