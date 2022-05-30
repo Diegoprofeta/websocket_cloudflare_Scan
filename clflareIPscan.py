@@ -63,7 +63,7 @@ def scanner(host):
 	sock=socket.socket()
 	sock.settimeout(2)
 	try:
-		sock.connect((str(host),443))
+		sock.connect((str(host),80))
 		payload='GET / HTTP/1.1\r\nHost: {}\r\n\r\n'.format(host)
 		sock.send(payload.encode())
 		response=sock.recv(1024).decode('utf-8','ignore')
