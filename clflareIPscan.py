@@ -42,7 +42,7 @@ def createlog():
 	with open('.firstusage.log',arg) as f:
 			if len(f.read()) < 1:
 				input(f'-{G}{status}{GR}\n{R}[!] mude para wifi ou conexão de dados para atualizar a lista de ipranges e clique em enter {GR}')
-				url ='https://www.cloudflare.com/ips-v4'
+				url ='https://www.cloudflare.com/ips-v6'
 				req = requests.get(url).text
 				ranges = req.split()
 				
